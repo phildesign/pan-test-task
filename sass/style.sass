@@ -1,0 +1,146 @@
+@import url('https://fonts.cdnfonts.com/css/formular')
+
+*, *::before, *::after
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+
+body
+  width: 100%
+  min-width: 320px
+  position: relative
+  line-height: 1.65
+  font-family: 'Formular', sans-serif
+  overflow-x: hidden
+  color: #333
+
+.wrapper
+  display: flex
+  position: relative
+  width: 100%
+  height: auto
+  margin: 0 auto
+
+.container
+  max-width: 1600px
+  display: flex
+  position: relative
+  width: 100%
+  height: auto
+  margin: 0 auto
+
+.header
+  width: 100%
+  height: 80px
+  background: #2C2E3E
+  &__row
+    width: 100%
+    height: 100%
+    display: grid
+    grid-template-columns: 75px auto 145px
+    gap: 174px
+    align-items: center
+    padding: 0 65px
+
+.header__logo
+  &-img
+    display: block
+    max-width: 100%
+    height: auto
+
+.header__nav
+  &-list
+    height: 100%
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+    gap: 98px
+    list-style: none
+  &-list-item
+    width: 123px
+    height: 40px
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 100px
+    transition: .5s
+    &:hover
+      background: #FF2D23
+    &_arrow
+      position: relative
+      &::after
+        content: ''
+        width: 10px
+        height: 5px
+        position: absolute
+        top: 0
+        right: 15px
+        bottom: 0
+        margin: auto
+        background: url('/img/nav-icon.svg') no-repeat
+      .header__nav-list-link
+        margin-left: -15px
+  &-list-link
+    font-weight: 700
+    font-size: 16px
+    line-height: 20px
+    color: #fff
+    text-decoration: none
+  &-list-subnav
+    display: none
+    width: 535px
+    position: absolute
+    top: 63px
+    left: 0
+    border: 1px solid
+    list-style: none
+    background: #2C2E3E
+    border-radius: 9px
+    padding: 23px 33px
+  &-list-subnav-group
+    display: grid
+    grid-template-columns: 1fr 1fr
+  &-list-subnav-group:not(:last-child)
+    border-bottom: 0.5px solid #5D6175
+    padding-bottom: 23px
+    margin-bottom: 25px
+  &-list-subnav-item
+    display: flex
+    flex-direction: column
+    position: relative
+    padding-left: 32px
+  &-list-subnav-icon
+    position: absolute
+    top: 0
+    left: 0
+  &-list-subnav-icon_base
+    width: 21px
+    height: 14px
+    background: url('/img/subnav-icon.svg') no-repeat
+  &-list-subnav-link
+    color: #fff
+    text-decoration: none
+    line-height: 1
+    margin-bottom: 6px
+  &-list-subnav-desc
+    font-weight: 400
+    font-size: 14px
+    line-height: 18px
+    color: #8F95AC
+
+.header__nav-list-item:hover .header__nav-list-subnav
+  display: block
+
+.header__nav-list-item:hover .header__nav-list-item_arrow::after
+  transform: translate(180deg)
+
+.header__button
+  width: 145px
+  height: 50px
+  color: #fff
+  font-weight: 700
+  font-size: 16px
+  line-height: 20px
+  background: #FF2D23
+  border: none
+  border-radius: 100px
